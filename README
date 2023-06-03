@@ -1,0 +1,7 @@
+Use like
+
+# stop and delete all containers and volumes
+$: ./docker-rambo
+
+# setup containers afresh
+$: ./docker-fscl

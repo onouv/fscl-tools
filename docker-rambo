@@ -1,0 +1,10 @@
+#!/bin/bash
+docker stop project-db-cnt
+docker stop project-pgadmin-cnt
+docker rm project-db-cnt
+docker rm project-pgadmin-cnt
+docker volume prune
+docker network prune
+docker ps -a
+docker volume ls
+docker network ls

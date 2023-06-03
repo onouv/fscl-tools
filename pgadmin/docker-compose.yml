@@ -1,0 +1,20 @@
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: unless-stopped
+    ports:
+      - 4040:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=foo@bar.com
+      - PGADMIN_DEFAULT_PASSWORD=blobby
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - projectdb-network
+volumes:
+  pgadmin-data:
+    driver: local
+networks:
+  projectdb-network:
+    driver: bridge
